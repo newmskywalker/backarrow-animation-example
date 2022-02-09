@@ -24,12 +24,10 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 private fun BackArrowAnimationDemo() {
-    var showCloseIcon by remember {
-        mutableStateOf(true)
-    }
-
     ArrowAnimationTheme {
-        // A surface container using the 'background' color from the theme
+        var showCloseIcon by remember {
+            mutableStateOf(true)
+        }
         Scaffold(topBar = {
             TopAppBar(
                 title = { Text("Animation Demo") },
@@ -67,7 +65,5 @@ private fun AnimatedBackArrow(showCloseIcon: Boolean) {
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    ArrowAnimationTheme {
-        BackArrowAnimationDemo()
-    }
+    BackArrowAnimationDemo()
 }
